@@ -1,0 +1,29 @@
+name: Build AsciiDoc to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Asciidoctor
+        run: sudo apt update && sudo apt install -y asciidoctor
+
+      - name: Build AsciiDoc files
+        run: |
+          mkdir -p docs
+          asciidoctor -D docs *.adoc
+
+      - name: Commit built site
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add docs/
+          git commit -m "Generate site from AsciiDoc" || echo "No changes to commit"
+          git push
