@@ -1,7 +1,147 @@
-<!DOCTYPE html>
-<html>
-<head><title>AsciiDoc Test</title></head>
-<body>
-  <h1>Hello from GitHub Pages!</h1>
-</body>
-</html>
+= ⚡ Cool AsciiDoc Tricks: An Extended Showcase
+Greg Smith <greg@example.com>
+2025-03-28
+:page-layout: default
+:navtitle: Cool Tricks
+:toc: left
+:toclevels: 3
+:sectnums:
+:icons: font
+:source-highlighter: rouge
+
+++++
+<style>
+.site-header {
+  background-color: #f8f9fa;
+  color: #222;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  font-family: system-ui, sans-serif;
+}
+
+.site-logo {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #0366d6;
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.site-search input {
+  padding: 0.4em 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+</style>
+
+<header class="site-header">
+  <a class="site-logo" href="#">📘 YourDocs</a>
+  <nav class="site-nav">
+    <a href="#">Home</a>
+    <a href="#">Getting Started</a>
+    <a href="#">Guides</a>
+    <a href="#">API</a>
+    <a href="#">About</a>
+  </nav>
+  <div class="site-search">
+    <input type="text" placeholder="Search docs..." />
+  </div>
+</header>
+++++
+
+
+== 🧭 Overview
+
+AsciiDoc is a lightweight yet powerful markup language for technical docs. This demo shows key features that render cleanly in HTML.
+
+== 🎨 Text Formatting
+
+* *Bold*
+* _Italic_
+* `Monospaced`
+* +Literal text+
+* pass:q[[green]#Success!#]
+
+kbd:[Ctrl+S] to save  
+CO~2~ and 10^3^ are rendered with sub/superscripts.
+
+== 📢 Admonitions
+
+NOTE: This is a note.  
+TIP: This is a helpful tip.  
+IMPORTANT: Pay attention here.  
+WARNING: Something might go wrong.  
+CAUTION: Be cautious.
+
+== ✅ Task Checklist
+
+. Install Asciidoctor
+. Create an `.adoc` file
+. Write content
+. Generate output
+.. Run: `asciidoctor ASCIIFirst.adoc`
+
+== 🧾 Code Snippets
+
+[source,python]
+----
+def greet(name):
+    print(f"Hello, {name}")
+----
+
+[source,json]
+----
+{
+  "framework": "asciidoctor",
+  "language": "AsciiDoc",
+  "status": "awesome"
+}
+----
+
+== 📊 Table Example
+
+[cols="2,2,2", options="header"]
+|===
+| Task | Owner | Status
+
+| Build top nav   | Greg   | Done
+| Write content   | Alice  | In Progress
+| Review draft    | Jordan | To Do
+|===
+
+== 🖼 Image Embed
+
+image::https://upload.wikimedia.org/wikipedia/commons/2/29/AsciiDoc_Logo.svg[AsciiDoc Logo, width=200]
+
+== 📆 Footer
+
+Document generated: {docdate}  
+© {year}
